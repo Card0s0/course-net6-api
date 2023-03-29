@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorApi", "CalculatorApi\CalculatorApi.csproj", "{9927EB6B-7E0D-4E7D-BD2D-FD6DA9E01DA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorApi", "CalculatorApi\CalculatorApi\CalculatorApi.csproj", "{9927EB6B-7E0D-4E7D-BD2D-FD6DA9E01DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelInterface", "ModelInterface\ModelInterface.csproj", "{61F6424F-2C5C-4EE7-96AF-F45BD9263D8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{9927EB6B-7E0D-4E7D-BD2D-FD6DA9E01DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9927EB6B-7E0D-4E7D-BD2D-FD6DA9E01DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9927EB6B-7E0D-4E7D-BD2D-FD6DA9E01DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F6424F-2C5C-4EE7-96AF-F45BD9263D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F6424F-2C5C-4EE7-96AF-F45BD9263D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F6424F-2C5C-4EE7-96AF-F45BD9263D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F6424F-2C5C-4EE7-96AF-F45BD9263D8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
