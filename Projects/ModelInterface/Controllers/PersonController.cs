@@ -4,7 +4,7 @@ using ModelInterface.Services.Interfaces;
 namespace ModelInterface.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/v1/[controller]")]
 public class PersonController : ControllerBase
 {
 
@@ -20,34 +20,57 @@ public class PersonController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Person> FindllPerson()
+    public IActionResult Get()
     {
-        return this.personService.FindAll();
+        var persons = this.personService.FindAll();
+        if (!persons.Any())
+        {
+            return NotFound();
+        }
+        return Ok(persons);
     }
 
     [HttpGet("{id}")]
-    public Person FindByIdPerson(long id)
+    public IActionResult Get(long id)
     {
-        return this.personService.FindById(id);
+        var person = this.personService.FindById(id);
+
+        if (person is null)
+        {
+            return NotFound();
+        }
+
+        return Ok(person);
     }
 
-    [HttpPost(Name = "CreatePerson")]
-    public Person CreatePerson([FromBody] Person person)
+    [HttpPost]
+    public IActionResult Post([FromBody] Person person)
     {
-        return this.personService.Create(person);
+        if (person is null)
+        {
+            return BadRequest();
+        }
+
+        return Ok(this.personService.Create(person));
     }
 
 
-    [HttpPut(Name = "UpdatePerson")]
-    public Person UpdatePerson([FromBody] Person person)
+    [HttpPut]
+    public IActionResult Put([FromBody] Person person)
     {
-        return this.personService.Update(person);
+        if (person is null)
+        {
+            return BadRequest();
+        }
+
+        return Ok(this.personService.Update(person));
     }
 
     [HttpDelete("{id}")]
-    public void DeletePerson(long id)
+    public IActionResult Delete(long id)
     {
         this.personService.Delete(id);
+        return NoContent();
     }
 
 }
